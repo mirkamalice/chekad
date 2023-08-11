@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2023-07-09 08:21:50
+/* Smarty version 3.1.33, created on 2023-08-11 13:17:39
   from 'C:\xampp\htdocs\ibilling\ui\theme\ibilling\add_invoice_v2.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_64aa2ed6119552_35090650',
+  'unifunc' => 'content_64d5f5ab49fba3_12127661',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9c64c63f3fec3e62eabc811537441bbfe5d67e3d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ibilling\\ui\\theme\\ibilling\\add_invoice_v2.tpl',
-      1 => 1688874709,
+      1 => 1691743611,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64aa2ed6119552_35090650 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64d5f5ab49fba3_12127661 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_87002481364aa2ed60f1334_46547617', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_41417475864d5f5ab4872f2_58547870', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "layouts/admin.tpl");
 }
 /* {block "content"} */
-class Block_87002481364aa2ed60f1334_46547617 extends Smarty_Internal_Block
+class Block_41417475864d5f5ab4872f2_58547870 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_87002481364aa2ed60f1334_46547617',
+    0 => 'Block_41417475864d5f5ab4872f2_58547870',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -285,11 +285,17 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="form-group">
                                 <label for="idate"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Invoice Date'];?>
 </label>
+                                <input type="text" id="idate" class="form-control"  value="<?php echo $_smarty_tpl->tpl_vars['t']->value['date'];?>
+" />
+                                <?php echo '<script'; ?>
+>
+                                    $("#idate").persianDatepicker({
+                                        selectedBefore: !0,
+                                        formatDate: "YYYY-MM-DD",
+                                    })
+                                <?php echo '</script'; ?>
+>
 
-                                <input type="text" class="form-control" id="idate" name="idate" datepicker
-                                       data-date-format="yyyy-mm-dd" data-auto-close="true"
-                                       value="<?php echo $_smarty_tpl->tpl_vars['idate']->value;?>
-">
                             </div>
                             <div class="form-group">
                                 <label for="duedate"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Payment Terms'];?>

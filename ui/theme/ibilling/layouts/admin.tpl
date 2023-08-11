@@ -32,6 +32,12 @@
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="msapplication-config" content="{$app_url}application/storage/icon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="{$app_url}ui/lib/css/persianDatepicker-default.css">
+    <script src="{$app_url}ui/theme/ibilling/js/jquery-1.10.2.js"></script>
+
+    {*    <script src="{$app_url}ui/lib/js/jquery-1.10.1.min.js"></script>*}
+    <script src="{$app_url}ui/lib/js/persianDatepicker.min.js"></script>
+
 
     <link href="{$app_url}ui/lib/css/ibilling.css" rel="stylesheet">
 

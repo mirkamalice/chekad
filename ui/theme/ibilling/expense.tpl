@@ -29,7 +29,14 @@
                         <div class="form-group">
                             <label for="date" class="col-sm-3 control-label">{$_L['Date']}</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control"  value="{$mdate}" name="date" id="date" datepicker data-date-format="yyyy-mm-dd" data-auto-close="true">
+                                <input type="text" id="date" class="form-control" />
+                                <script>
+                                    $("#date").persianDatepicker({
+                                        selectedBefore: !0,
+                                        formatDate: "YYYY-MM-DD",
+                                    })
+                                </script>
+                                {*                                <input type="text" class="form-control"  value="{$mdate}" name="date" id="date" datepicker data-date-format="yyyy-mm-dd" data-auto-close="true">*}
                             </div>
                         </div>
 

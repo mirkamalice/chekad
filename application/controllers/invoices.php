@@ -347,8 +347,36 @@ if($config['i_driver'] == 'default'){
         } else {
             $msg .= $_L['at_least_one_item_required'].' <br> ';
         }
+        function jalali_to_gregorian($jy, $jm, $jd, $mod = '') {
+            list($jy, $jm, $jd) = explode('_', tr_num($jy . '_' . $jm . '_' . $jd));/* <= Extra :اين سطر ، جزء تابع اصلي نيست */
+            $jy += 1595;
+            $days = -355668 + (365 * $jy) + (((int) ($jy / 33)) * 8) + ((int) ((($jy % 33) + 3) / 4)) + $jd + (($jm < 7) ? ($jm - 1) * 31 : (($jm - 7) * 30) + 186);
+            $gy = 400 * ((int) ($days / 146097));
+            $days %= 146097;
+            if ($days > 36524) {
+                $gy += 100 * ((int) (--$days / 36524));
+                $days %= 36524;
+                if ($days >= 365) $days++;
+            }
+            $gy += 4 * ((int) ($days / 1461));
+            $days %= 1461;
+            if ($days > 365) {
+                $gy += (int) (($days - 1) / 365);
+                $days = ($days - 1) % 365;
+            }
+            $gd = $days + 1;
+            $sal_a = array(0, 31, (($gy % 4 == 0 and $gy % 100 != 0) or ($gy % 400 == 0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+            for ($gm = 0; $gm < 13 and $gd > $sal_a[$gm]; $gm++) $gd -= $sal_a[$gm];
+            return ($mod == '') ? array($gy, $gm, $gd) : $gy . $mod . $gm . $mod . $gd;
+        }
+        function tr_num($str, $mod = 'en', $mf = '٫') {
+            $num_a = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.');
+            $key_a = array('۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹', $mf);
+            return ($mod == 'fa') ? str_replace($num_a, $key_a, $str) : str_replace($key_a, $num_a, $str);
+        }
+        $pieces = explode("-", _post('idate'));
+        $idate = jalali_to_gregorian($pieces[0],$pieces[1],$pieces[2], '-');
 
-        $idate = _post('idate');
         $its = strtotime($idate);
         $duedate = _post('duedate');
         $dd = '';

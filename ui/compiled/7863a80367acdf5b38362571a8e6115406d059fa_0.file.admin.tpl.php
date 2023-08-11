@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2023-07-11 19:10:34
+/* Smarty version 3.1.33, created on 2023-08-11 09:44:27
   from 'C:\xampp\htdocs\ibilling\ui\theme\ibilling\layouts\admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_64ad69e22b4bf0_33261935',
+  'unifunc' => 'content_64d5c3b39cb177_02310935',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7863a80367acdf5b38362571a8e6115406d059fa' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ibilling\\ui\\theme\\ibilling\\layouts\\admin.tpl',
-      1 => 1689086433,
+      1 => 1691730863,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64ad69e22b4bf0_33261935 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64d5c3b39cb177_02310935 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -66,6 +66,18 @@ application/storage/icon/favicon.ico">
     <meta name="msapplication-config" content="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
 application/storage/icon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+ui/lib/css/persianDatepicker-default.css">
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+ui/theme/ibilling/js/jquery-1.10.2.js"><?php echo '</script'; ?>
+>
+
+        <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+ui/lib/js/persianDatepicker.min.js"><?php echo '</script'; ?>
+>
+
 
     <link href="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
 ui/lib/css/ibilling.css" rel="stylesheet">
@@ -233,7 +245,7 @@ logout/"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Logout'];?>
 <?php }?>
 
                 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_32525699764ad69e22acbe7_74137025', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_84573883764d5c3b39be554_33533429', "content");
 ?>
 
 
@@ -423,7 +435,7 @@ ui/lib/ibilling.js"><?php echo '</script'; ?>
 <?php }?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_100695277364ad69e22b39e3_73888511', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_43074070964d5c3b39c95b9_74154182', 'script');
 ?>
 
 
@@ -450,12 +462,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_100695277364ad69e2
 </html>
 <?php }
 /* {block "content"} */
-class Block_32525699764ad69e22acbe7_74137025 extends Smarty_Internal_Block
+class Block_84573883764d5c3b39be554_33533429 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_32525699764ad69e22acbe7_74137025',
+    0 => 'Block_84573883764d5c3b39be554_33533429',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -463,12 +475,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "content"} */
 /* {block 'script'} */
-class Block_100695277364ad69e22b39e3_73888511 extends Smarty_Internal_Block
+class Block_43074070964d5c3b39c95b9_74154182 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_100695277364ad69e22b39e3_73888511',
+    0 => 'Block_43074070964d5c3b39c95b9_74154182',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

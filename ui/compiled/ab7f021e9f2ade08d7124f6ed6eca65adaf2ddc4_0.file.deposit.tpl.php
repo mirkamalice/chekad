@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2023-08-06 19:15:48
+/* Smarty version 3.1.33, created on 2023-08-11 10:23:33
   from 'C:\xampp\htdocs\ibilling\ui\theme\ibilling\deposit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_64cfb21c792019_99253456',
+  'unifunc' => 'content_64d5ccddeb30b1_65534970',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ab7f021e9f2ade08d7124f6ed6eca65adaf2ddc4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ibilling\\ui\\theme\\ibilling\\deposit.tpl',
-      1 => 1691333147,
+      1 => 1691733211,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64cfb21c792019_99253456 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64d5ccddeb30b1_65534970 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_197494694164cfb21c76c619_06229957', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_173372081564d5ccdde95364_97829458', "content");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "layouts/admin.tpl");
 }
 /* {block "content"} */
-class Block_197494694164cfb21c76c619_06229957 extends Smarty_Internal_Block
+class Block_173372081564d5ccdde95364_97829458 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_197494694164cfb21c76c619_06229957',
+    0 => 'Block_173372081564d5ccdde95364_97829458',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -86,9 +86,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <label for="date" class="col-sm-3 control-label"><?php echo $_smarty_tpl->tpl_vars['_L']->value['Date'];?>
 </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control"  value="<?php echo $_smarty_tpl->tpl_vars['mdate']->value;?>
-" name="date" id="date" datepicker data-date-format="yyyy-mm-dd" data-auto-close="true">
-                            </div>
+                                <input type="text" id="date" class="form-control" />
+                                <?php echo '<script'; ?>
+>
+                                    $("#date").persianDatepicker({
+                                        selectedBefore: !0,
+                                        formatDate: "YYYY-MM-DD",
+                                    })
+                                <?php echo '</script'; ?>
+>
+                                                            </div>
                         </div>
 
                         <div class="form-group">
@@ -108,10 +115,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <input type="text" class="form-control amount" id="amount" name="amount">
                             </div>
                         </div>
-
-
-
-
 
 
                         <div class="form-group">
@@ -343,6 +346,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
         </div>
     </div>
+
 
 <?php
 }

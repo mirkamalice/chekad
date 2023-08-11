@@ -194,10 +194,17 @@
 
                             <div class="form-group">
                                 <label for="idate">{$_L['Invoice Date']}</label>
+                                <input type="text" id="idate" class="form-control"  value="{$t['date']}" />
+                                <script>
+                                    $("#idate").persianDatepicker({
+                                        selectedBefore: !0,
+                                        formatDate: "YYYY-MM-DD",
+                                    })
+                                </script>
 
-                                <input type="text" class="form-control" id="idate" name="idate" datepicker
-                                       data-date-format="yyyy-mm-dd" data-auto-close="true"
-                                       value="{$idate}">
+{*                                <input type="text" class="form-control" id="idate" name="idate" datepicker*}
+{*                                       data-date-format="yyyy-mm-dd" data-auto-close="true"*}
+{*                                       value="{$idate}">*}
                             </div>
                             <div class="form-group">
                                 <label for="duedate">{$_L['Payment Terms']}</label>

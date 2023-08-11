@@ -28,7 +28,13 @@
                         <div class="form-group">
                             <label for="date" class="col-sm-3 control-label">{$_L['Date']}</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control"  value="{$t['date']}" name="date" id="date" datepicker data-date-format="yyyy-mm-dd" data-auto-close="true">
+                                <input type="text" id="date" class="form-control"  value="{$t['date']}" />
+                                <script>
+                                    $("#date").persianDatepicker({
+                                        formatDate: "YYYY-MM-DD",
+                                    })
+                                </script>
+{*                                <input type="text" class="form-control"  value="{$t['date']}" name="date" id="date" datepicker data-date-format="yyyy-mm-dd" data-auto-close="true">*}
                             </div>
                         </div>
 

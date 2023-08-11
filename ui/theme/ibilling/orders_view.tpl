@@ -33,12 +33,22 @@
 
                     <div class="row">
                         <div class="col-md-4">
+
                             <div class="well">
                                 <h4>{$_L['Order Number']} - {$order->ordernum}</h4>
                                 <p><strong>{$_L['Customer']}: </strong> {$order->cname}</p>
                                 <p><strong>{$_L['Product_Service']}: </strong> {$order->stitle}</p>
                                 <p><strong>{$_L['Amount']}: </strong> <span class="amount">{$order->amount}</span> </p>
-                                <p><strong>{$_L['Date']}: </strong>{date( $_c['df'], strtotime($order->date_added))}</p>
+                                <p id="date_added" style="display: none">{$order->date_added}</p>
+                                <p id="jdate_added"><strong>{$_L['Date']}: </strong></p>
+                                <script>
+                                    $(document).ready(()=>{
+                                        let date = document.getElementById("date_added").innerHTML;
+                                        let holder = document.getElementById("jdate_added");
+                                        holder.innerHTML += new Date(date).toLocaleDateString('fa-IR');
+                                    })
+
+                                </script>
                                 <p><strong>{$_L['Status']}: </strong>
 
 
